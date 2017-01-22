@@ -1,0 +1,7 @@
+PROCESS:-
+
+CALL TAKE_ORDER('','',) # item names, quantities , seatno
+
+CALL CANCEL_ORDER() # Item name ,order no , quantity
+
+CALL CANCEL_FULL_ORDER() # order no
