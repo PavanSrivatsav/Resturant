@@ -2,7 +2,8 @@
 SQLyog Ultimate v12.09 (64 bit)
 MySQL - 5.5.22 : Database - resturant
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -100,7 +101,8 @@ BEGIN
 				ELSE 
 				SELECT ITEM AS 'Sorry Items available now are:-' FROM food_items WHERE ID IN
 				(SELECT FOOD_ITEM_ID FROM items_category WHERE FOOD_CATEGORY_ID IN
-				( SELECT ID FROM food_schedule WHERE CURTIME() BETWEEN TIME_START AND TIME_END)) ;	
+				( SELECT ID FROM food_schedule WHERE CURTIME() BETWEEN TIME_START AND TIME_END)) ;
+				UPDATE SEATS s SET s.STATUS=0 WHERE SEAT_NO=I_SEAT_NO;
 	LEAVE ITERATOR;		
 	END IF;
 			ELSE
